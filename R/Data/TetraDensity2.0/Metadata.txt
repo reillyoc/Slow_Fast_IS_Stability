@@ -1,0 +1,67 @@
+METADATA of TetraDENSITY 2.0
+
+Reference: Santini et al. TetraDENSITY 2.0 – A database of population density estimates in Tetrapods. Global Ecology and Biogeography
+
+Collector = Person who collected the data
+
+Class = Taxonomic class
+
+Order = Taxonomic order
+
+Species COL = Binomial standardized using Catalogue of Life
+
+Species_rep = Binomial reported in the study
+
+Subspecies_rep = Subspecies
+
+Year = Sampling year(s). Expressed as a range when the sampling occurred over multiple years. 
+
+X = Central longitude of the study area (decimal degrees)
+
+Y = Centra latitude of the study area (decimal degrees)
+
+Xmin = Westernmost longitude of the study area
+
+Xmax = Easternmost longitude of the study area
+
+Ymin = Northernmost latitude of the study area
+
+Ymax = Southernmost latitude of the study area
+
+Site = Name of the study site (also reporting region, island name, etc..)
+
+Country = Name of the country
+
+Sampling_area = The smallest sampling unit. If data were collected over the whole study area (e.g. mark-recapture, census) it corresponds to the study area. If data were collected within smaller areas (e.g. plots, strip transects) it corresponds to their size
+
+Sampling_area_unit = Unit measurement of the sampling area
+
+Density = Population density estimate
+
+Density_unit = Unit measurement for the population density estimate
+
+SE = Standard error of the density estimate
+
+SD = Standard deviation of the density estimate
+
+CI90 = 90% confidence intervals of the density estimate
+
+CI95 = 95% confidence intervals of the density estimate
+
+CV = Coefficient of variation of the density estimate expressed as percentage
+
+Method = Sampling method category: Census = Any count that assumes all individuals were counted (e.g. aerial census); Counts = any incomplete count extrapolated on a larger area (e.g. strip transect counts, plot counts); Distance_sampling = Estimates based on distance sampling methods (e.g. line transects or point counts); Distance_sampling_corrected = Distance sampling estimates where g(0) ≠ 1, i.e. detectability at distance = 0 can be lower than 1 (e.g. aquatic mammals); Encounter_Models = Camera-trap models based on animal movement and frequency of encounters; Home_range =  Density estimated as the inverse of the home range area (1/home range area), in some cases accounting for group size, home range overlap, etc..; Mark_recapture =  Any estimate obtained on mark-recapture methods (genetic, camera traps, classical, etc.); Spatial_Capture_Recapture = Capture-recapture approaches modeling the spatial heterogeneity in detectability of individuals as a function of the distance from their activity centers; Mixture_Models = Models combining a model for probability of detection and one for estimating abundance from count data; Minimum_Number_Alive = any estimate based on the minimum number of animals observed (e.g. trapping studies). 
+
+Method2 = Sub-category of method as reported in Table 2.
+
+Notes_method = Free-format field where additional notes related to the method are reported
+
+Habitat = Descriptive field of the habitat type
+
+Season = Period of sampling expressed in seasons (e.g. Dry seasons, Fall) or months (e.g. February – April). If both are available, only months are reported
+
+Native = Indicates if the species is native to the area
+
+Notes = Additional useful notes that do not fit in other fields
+
+Reference = Reference of the study reported in APA format

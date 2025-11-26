@@ -1,0 +1,304 @@
+Binomial,Order,Family,Genus,Species,Group
+Coleura_seychellensis,Chiroptera,Emballonuridae,Coleura,Coleura seychellensis,Bats
+Pteropus_conspicillatus,Chiroptera,Pteropodidae,Pteropus,Pteropus conspicillatus,Bats
+Pteropus_poliocephalus,Chiroptera,Pteropodidae,Pteropus,Pteropus poliocephalus,Bats
+Pteropus_samoensis,Chiroptera,Pteropodidae,Pteropus,Pteropus samoensis,Bats
+Pteropus_tonganus,Chiroptera,Pteropodidae,Pteropus,Pteropus tonganus,Bats
+Rhinolophus_euryale,Chiroptera,Rhinolophidae,Rhinolophus,Rhinolophus euryale,Bats
+Rhinolophus_ferrumequinum,Chiroptera,Rhinolophidae,Rhinolophus,Rhinolophus ferrumequinum,Bats
+Rhinolophus_hipposideros,Chiroptera,Rhinolophidae,Rhinolophus,Rhinolophus hipposideros,Bats
+Rhinolophus_mehelyi,Chiroptera,Rhinolophidae,Rhinolophus,Rhinolophus mehelyi,Bats
+Aeorestes_cinereus,Chiroptera,Vespertilionidae,Aeorestes,Aeorestes cinereus,Bats
+Corynorhinus_townsendii,Chiroptera,Vespertilionidae,Corynorhinus,Corynorhinus townsendii,Bats
+Eptesicus_serotinus,Chiroptera,Vespertilionidae,Eptesicus,Eptesicus serotinus,Bats
+Lasionycteris_noctivagans,Chiroptera,Vespertilionidae,Lasionycteris,Lasionycteris noctivagans,Bats
+Lasiurus_borealis,Chiroptera,Vespertilionidae,Lasiurus,Lasiurus borealis,Bats
+Miniopterus_schreibersii,Chiroptera,Vespertilionidae,Miniopterus,Miniopterus schreibersii,Bats
+Myotis_capaccinii,Chiroptera,Vespertilionidae,Myotis,Myotis capaccinii,Bats
+Myotis_dasycneme,Chiroptera,Vespertilionidae,Myotis,Myotis dasycneme,Bats
+Myotis_daubentonii,Chiroptera,Vespertilionidae,Myotis,Myotis daubentonii,Bats
+Myotis_emarginatus,Chiroptera,Vespertilionidae,Myotis,Myotis emarginatus,Bats
+Myotis_escalerai,Chiroptera,Vespertilionidae,Myotis,Myotis escalerai,Bats
+Myotis_lucifugus,Chiroptera,Vespertilionidae,Myotis,Myotis lucifugus,Bats
+Myotis_myotis,Chiroptera,Vespertilionidae,Myotis,Myotis myotis,Bats
+Myotis_nattereri,Chiroptera,Vespertilionidae,Myotis,Myotis nattereri,Bats
+Myotis_septentrionalis,Chiroptera,Vespertilionidae,Myotis,Myotis septentrionalis,Bats
+Nyctalus_noctula,Chiroptera,Vespertilionidae,Nyctalus,Nyctalus noctula,Bats
+Pipistrellus_pipistrellus,Chiroptera,Vespertilionidae,Pipistrellus,Pipistrellus pipistrellus,Bats
+Pipistrellus_pygmaeus,Chiroptera,Vespertilionidae,Pipistrellus,Pipistrellus pygmaeus,Bats
+Plecotus_auritus,Chiroptera,Vespertilionidae,Plecotus,Plecotus auritus,Bats
+Plecotus_austriacus,Chiroptera,Vespertilionidae,Plecotus,Plecotus austriacus,Bats
+Canis_aureus,Carnivora,Canidae,Canis,Canis aureus,Carnivores
+Canis_latrans,Carnivora,Canidae,Canis,Canis latrans,Carnivores
+Canis_lupus,Carnivora,Canidae,Canis,Canis lupus,Carnivores
+Canis_simensis,Carnivora,Canidae,Canis,Canis simensis,Carnivores
+Lycalopex_gymnocercus,Carnivora,Canidae,Lycalopex,Lycalopex gymnocercus,Carnivores
+Lycaon_pictus,Carnivora,Canidae,Lycaon,Lycaon pictus,Carnivores
+Vulpes_lagopus,Carnivora,Canidae,Vulpes,Vulpes lagopus,Carnivores
+Vulpes_vulpes,Carnivora,Canidae,Vulpes,Vulpes vulpes,Carnivores
+Acinonyx_jubatus,Carnivora,Felidae,Acinonyx,Acinonyx jubatus,Carnivores
+Felis_silvestris,Carnivora,Felidae,Felis,Felis silvestris,Carnivores
+Lynx_canadensis,Carnivora,Felidae,Lynx,Lynx canadensis,Carnivores
+Lynx_lynx,Carnivora,Felidae,Lynx,Lynx lynx,Carnivores
+Lynx_pardinus,Carnivora,Felidae,Lynx,Lynx pardinus,Carnivores
+Panthera_leo,Carnivora,Felidae,Panthera,Panthera leo,Carnivores
+Panthera_onca,Carnivora,Felidae,Panthera,Panthera onca,Carnivores
+Uncia_uncia,Carnivora,Felidae,Panthera,Panthera uncia,Carnivores
+Puma_concolor,Carnivora,Felidae,Puma,Puma concolor,Carnivores
+Galerella_sanguinea,Carnivora,Herpestidae,Galerella,Galerella sanguinea,Carnivores
+Helogale_parvula,Carnivora,Herpestidae,Helogale,Helogale parvula,Carnivores
+Mungos_mungo,Carnivora,Herpestidae,Mungos,Mungos mungo,Carnivores
+Mephitis_mephitis,Carnivora,Mephitidae,Mephitis,Mephitis mephitis,Carnivores
+Enhydra_lutris,Carnivora,Mustelidae,Enhydra,Enhydra lutris,Carnivores
+Gulo_gulo,Carnivora,Mustelidae,Gulo,Gulo gulo,Carnivores
+Lutra_lutra,Carnivora,Mustelidae,Lutra,Lutra lutra,Carnivores
+Martes_americana,Carnivora,Mustelidae,Martes,Martes americana,Carnivores
+Martes_foina,Carnivora,Mustelidae,Martes,Martes foina,Carnivores
+Martes_martes,Carnivora,Mustelidae,Martes,Martes martes,Carnivores
+Meles_meles,Carnivora,Mustelidae,Meles,Meles meles,Carnivores
+Mustela_erminea,Carnivora,Mustelidae,Mustela,Mustela erminea,Carnivores
+Mustela_frenata,Carnivora,Mustelidae,Mustela,Mustela frenata,Carnivores
+Mustela_nivalis,Carnivora,Mustelidae,Mustela,Mustela nivalis,Carnivores
+Mustela_vison,Carnivora,Mustelidae,Mustela,Mustela vison,Carnivores
+Pekania_pennanti,Carnivora,Mustelidae,Pekania,Pekania pennanti,Carnivores
+Pteronura_brasiliensis,Carnivora,Mustelidae,Pteronura,Pteronura brasiliensis,Carnivores
+Procyon_lotor,Carnivora,Procyonidae,Procyon,Procyon lotor,Carnivores
+Ursus_americanus,Carnivora,Ursidae,Ursus,Ursus americanus,Carnivores
+Ursus_arctos,Carnivora,Ursidae,Ursus,Ursus arctos,Carnivores
+Ursus_maritimus,Carnivora,Ursidae,Ursus,Ursus maritimus,Carnivores
+Genetta_genetta,Carnivora,Viverridae,Genetta,Genetta genetta,Carnivores
+Loxodonta_africana,Proboscidea,Elephantidae,Loxodonta,Loxodonta africana,Elephants
+Loxodonta_cyclotis,Proboscidea,Elephantidae,Loxodonta,Loxodonta cyclotis,Elephants
+Lepus_americanus,Lagomorpha,Leporidae,Lepus,Lepus americanus,Glires
+Lepus_timidus,Lagomorpha,Leporidae,Lepus,Lepus timidus,Glires
+Oryctolagus_cuniculus,Lagomorpha,Leporidae,Oryctolagus,Oryctolagus cuniculus,Glires
+Ochotona_collaris,Lagomorpha,Ochotonidae,Ochotona,Ochotona collaris,Glires
+Dromiciops_gliroides,Microbiotheria,Microbiotheriidae,Dromiciops,Dromiciops gliroides,Glires
+Castor_canadensis,Rodentia,Castoridae,Castor,Castor canadensis,Glires
+Castor_fiber,Rodentia,Castoridae,Castor,Castor fiber,Glires
+Abrothrix_longipilis,Rodentia,Cricetidae,Abrothrix,Abrothrix longipilis,Glires
+Abrothrix_olivaceus,Rodentia,Cricetidae,Abrothrix,Abrothrix olivaceus,Glires
+Akodon_azarae,Rodentia,Cricetidae,Akodon,Akodon azarae,Glires
+Akodon_cursor,Rodentia,Cricetidae,Akodon,Akodon cursor,Glires
+Microtus_oeconomus,Rodentia,Cricetidae,Alexandromys,Alexandromys oeconomus,Glires
+Arvicola_amphibius,Rodentia,Cricetidae,Arvicola,Arvicola amphibius,Glires
+Calomys_venustus,Rodentia,Cricetidae,Calomys,Calomys venustus,Glires
+Myodes_gapperi,Rodentia,Cricetidae,Clethrionomys,Clethrionomys gapperi,Glires
+Cricetus_cricetus,Rodentia,Cricetidae,Cricetus,Cricetus cricetus,Glires
+Dicrostonyx_groenlandicus,Rodentia,Cricetidae,Dicrostonyx,Dicrostonyx groenlandicus,Glires
+Dicrostonyx_torquatus,Rodentia,Cricetidae,Dicrostonyx,Dicrostonyx torquatus,Glires
+Lemmus_lemmus,Rodentia,Cricetidae,Lemmus,Lemmus lemmus,Glires
+Lemmus_portenkoi,Rodentia,Cricetidae,Lemmus,Lemmus portenkoi,Glires
+Lemmus_trimucronatus,Rodentia,Cricetidae,Lemmus,Lemmus trimucronatus,Glires
+Microtus_agrestis,Rodentia,Cricetidae,Microtus,Microtus agrestis,Glires
+Microtus_arvalis,Rodentia,Cricetidae,Microtus,Microtus arvalis,Glires
+Microtus_californicus,Rodentia,Cricetidae,Microtus,Microtus californicus,Glires
+Microtus_longicaudus,Rodentia,Cricetidae,Microtus,Microtus longicaudus,Glires
+Microtus_montanus,Rodentia,Cricetidae,Microtus,Microtus montanus,Glires
+Microtus_pennsylvanicus,Rodentia,Cricetidae,Microtus,Microtus pennsylvanicus,Glires
+Myodes_glareolus,Rodentia,Cricetidae,Myodes,Myodes glareolus,Glires
+Myodes_rufocanus,Rodentia,Cricetidae,Myodes,Myodes rufocanus,Glires
+Myodes_rutilus,Rodentia,Cricetidae,Myodes,Myodes rutilus,Glires
+Nectomys_squamipes,Rodentia,Cricetidae,Nectomys,Nectomys squamipes,Glires
+Neotoma_albigula,Rodentia,Cricetidae,Neotoma,Neotoma albigula,Glires
+Neotoma_magister,Rodentia,Cricetidae,Neotoma,Neotoma magister,Glires
+Nyctomys_sumichrasti,Rodentia,Cricetidae,Nyctomys,Nyctomys sumichrasti,Glires
+Oligoryzomys_longicaudatus,Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys longicaudatus,Glires
+Oligoryzomys_nigripes,Rodentia,Cricetidae,Oligoryzomys,Oligoryzomys nigripes,Glires
+Onychomys_leucogaster,Rodentia,Cricetidae,Onychomys,Onychomys leucogaster,Glires
+Onychomys_torridus,Rodentia,Cricetidae,Onychomys,Onychomys torridus,Glires
+Oryzomys_couesi,Rodentia,Cricetidae,Oryzomys,Oryzomys couesi,Glires
+Osgoodomys_banderanus,Rodentia,Cricetidae,Osgoodomys,Osgoodomys banderanus,Glires
+Oxymycterus_rufus,Rodentia,Cricetidae,Oxymycterus,Oxymycterus rufus,Glires
+Peromyscus_eremicus,Rodentia,Cricetidae,Peromyscus,Peromyscus eremicus,Glires
+Peromyscus_maniculatus,Rodentia,Cricetidae,Peromyscus,Peromyscus maniculatus,Glires
+Peromyscus_perfulvus,Rodentia,Cricetidae,Peromyscus,Peromyscus perfulvus,Glires
+Phenacomys_intermedius,Rodentia,Cricetidae,Phenacomys,Phenacomys intermedius,Glires
+Phyllotis_darwini,Rodentia,Cricetidae,Phyllotis,Phyllotis darwini,Glires
+Reithrodontomys_megalotis,Rodentia,Cricetidae,Reithrodontomys,Reithrodontomys megalotis,Glires
+Napaeozapus_insignis,Rodentia,Dipodidae,Napaeozapus,Napaeozapus insignis,Glires
+Erethizon_dorsatus,Rodentia,Erethizontidae,Erethizon,Erethizon dorsatus,Glires
+Muscardinus_avellanarius,Rodentia,Gliridae,Muscardinus,Muscardinus avellanarius,Glires
+Chaetodipus_intermedius,Rodentia,Heteromyidae,Chaetodipus,Chaetodipus intermedius,Glires
+Chaetodipus_penicillatus,Rodentia,Heteromyidae,Chaetodipus,Chaetodipus penicillatus,Glires
+Dipodomys_merriami,Rodentia,Heteromyidae,Dipodomys,Dipodomys merriami,Glires
+Dipodomys_ordii,Rodentia,Heteromyidae,Dipodomys,Dipodomys ordii,Glires
+Dipodomys_spectabilis,Rodentia,Heteromyidae,Dipodomys,Dipodomys spectabilis,Glires
+Perognathus_flavus,Rodentia,Heteromyidae,Perognathus,Perognathus flavus,Glires
+Apodemus_flavicollis,Rodentia,Muridae,Apodemus,Apodemus flavicollis,Glires
+Apodemus_sylvaticus,Rodentia,Muridae,Apodemus,Apodemus sylvaticus,Glires
+Maxomys_rajah,Rodentia,Muridae,Maxomys,Maxomys rajah,Glires
+Maxomys_whiteheadi,Rodentia,Muridae,Maxomys,Maxomys whiteheadi,Glires
+Mus_musculus,Rodentia,Muridae,Mus,Mus musculus,Glires
+Pseudomys_novaehollandiae,Rodentia,Muridae,Pseudomys,Pseudomys novaehollandiae,Glires
+Rattus_colletti,Rodentia,Muridae,Rattus,Rattus colletti,Glires
+Myocastor_coypus,Rodentia,Myocastoridae,Myocastor,Myocastor coypus,Glires
+Hypogeomys_antimena,Rodentia,Nesomyidae,Hypogeomys,Hypogeomys antimena,Glires
+Saccostomus_mearnsi,Rodentia,Nesomyidae,Saccostomus,Saccostomus mearnsi,Glires
+Octodon_degus,Rodentia,Octodontidae,Octodon,Octodon degus,Glires
+Cynomys_ludovicianus,Rodentia,Sciuridae,Cynomys,Cynomys ludovicianus,Glires
+Glaucomys_sabrinus,Rodentia,Sciuridae,Glaucomys,Glaucomys sabrinus,Glires
+Ictidomys_tridecemlineatus,Rodentia,Sciuridae,Ictidomys,Ictidomys tridecemlineatus,Glires
+Marmota_flaviventris,Rodentia,Sciuridae,Marmota,Marmota flaviventris,Glires
+Marmota_marmota,Rodentia,Sciuridae,Marmota,Marmota marmota,Glires
+Marmota_vancouverensis,Rodentia,Sciuridae,Marmota,Marmota vancouverensis,Glires
+Poliocitellus_franklinii,Rodentia,Sciuridae,Poliocitellus,Poliocitellus franklinii,Glires
+Sciurus_vulgaris,Rodentia,Sciuridae,Sciurus,Sciurus vulgaris,Glires
+Tamias_amoenus,Rodentia,Sciuridae,Tamias,Tamias amoenus,Glires
+Tamias_minimus,Rodentia,Sciuridae,Tamias,Tamias minimus,Glires
+Tamias_striatus,Rodentia,Sciuridae,Tamias,Tamias striatus,Glires
+Tamiasciurus_hudsonicus,Rodentia,Sciuridae,Tamiasciurus,Tamiasciurus hudsonicus,Glires
+Urocitellus_columbianus,Rodentia,Sciuridae,Urocitellus,Urocitellus columbianus,Glires
+Urocitellus_parryii,Rodentia,Sciuridae,Urocitellus,Urocitellus parryii,Glires
+Blarina_brevicauda,Eulipotyphla,Soricidae,Blarina,Blarina brevicauda,Insectivores
+Neomys_fodiens,Eulipotyphla,Soricidae,Neomys,Neomys fodiens,Insectivores
+Sorex_araneus,Eulipotyphla,Soricidae,Sorex,Sorex araneus,Insectivores
+Sorex_caecutiens,Eulipotyphla,Soricidae,Sorex,Sorex caecutiens,Insectivores
+Sorex_cinereus,Eulipotyphla,Soricidae,Sorex,Sorex cinereus,Insectivores
+Sorex_daphaenodon,Eulipotyphla,Soricidae,Sorex,Sorex daphaenodon,Insectivores
+Sorex_isodon,Eulipotyphla,Soricidae,Sorex,Sorex isodon,Insectivores
+Sorex_minutissimus,Eulipotyphla,Soricidae,Sorex,Sorex minutissimus,Insectivores
+Sorex_minutus,Eulipotyphla,Soricidae,Sorex,Sorex minutus,Insectivores
+Sorex_monticolus,Eulipotyphla,Soricidae,Sorex,Sorex monticolus,Insectivores
+Sorex_roboratus,Eulipotyphla,Soricidae,Sorex,Sorex roboratus,Insectivores
+Sorex_trowbridgii,Eulipotyphla,Soricidae,Sorex,Sorex trowbridgii,Insectivores
+Sorex_tundrensis,Eulipotyphla,Soricidae,Sorex,Sorex tundrensis,Insectivores
+Sorex_vagrans,Eulipotyphla,Soricidae,Sorex,Sorex vagrans,Insectivores
+Sorex_bendirii,Soricomorpha,Soricidae,Sorex,Sorex bendirri,Insectivores
+Eubalaena_australis,Artiodactyla,Balaenidae,Eubalaena,Eubalaena australis,Marine Mammals
+Eubalaena_glacialis,Artiodactyla,Balaenidae,Eubalaena,Eubalaena glacialis,Marine Mammals
+Balaenoptera_acutorostrata,Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera acutorostrata,Marine Mammals
+Balaenoptera_musculus,Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera musculus,Marine Mammals
+Balaenoptera_physalus,Artiodactyla,Balaenopteridae,Balaenoptera,Balaenoptera physalus,Marine Mammals
+Megaptera_novaeangliae,Artiodactyla,Balaenopteridae,Megaptera,Megaptera novaeangliae,Marine Mammals
+Delphinus_delphis,Artiodactyla,Delphinidae,Delphinus,Delphinus capensis,Marine Mammals
+Delphinus_delphis,Artiodactyla,Delphinidae,Delphinus,Delphinus delphis,Marine Mammals
+Globicephala_melas,Artiodactyla,Delphinidae,Globicephala,Globicephala melas,Marine Mammals
+Lagenorhynchus_acutus,Artiodactyla,Delphinidae,Lagenorhynchus,Lagenorhynchus acutus,Marine Mammals
+Orcinus_orca,Artiodactyla,Delphinidae,Orcinus,Orcinus orca,Marine Mammals
+Pseudorca_crassidens,Artiodactyla,Delphinidae,Pseudorca,Pseudorca crassidens,Marine Mammals
+Sotalia_fluviatilis,Artiodactyla,Delphinidae,Sotalia,Sotalia fluviatilis,Marine Mammals
+Sousa_chinensis,Artiodactyla,Delphinidae,Sousa,Sousa chinensis,Marine Mammals
+Stenella_attenuata,Artiodactyla,Delphinidae,Stenella,Stenella attenuata,Marine Mammals
+Stenella_coeruleoalba,Artiodactyla,Delphinidae,Stenella,Stenella coeruleoalba,Marine Mammals
+Stenella_longirostris,Artiodactyla,Delphinidae,Stenella,Stenella longirostris,Marine Mammals
+Tursiops_aduncus,Artiodactyla,Delphinidae,Tursiops,Tursiops aduncus,Marine Mammals
+Tursiops_truncatus,Artiodactyla,Delphinidae,Tursiops,Tursiops truncatus,Marine Mammals
+Eschrichtius_robustus,Artiodactyla,Eschrichtiidae,Eschrichtius,Eschrichtius robustus,Marine Mammals
+Inia_geoffrensis,Artiodactyla,Iniidae,Inia,Inia geoffrensis,Marine Mammals
+Delphinapterus_leucas,Artiodactyla,Monodontidae,Delphinapterus,Delphinapterus leucas,Marine Mammals
+Phocoena_phocoena,Artiodactyla,Phocoenidae,Phocoena,Phocoena phocoena,Marine Mammals
+Physeter_macrocephalus,Artiodactyla,Physeteridae,Physeter,Physeter catodon,Marine Mammals
+Hyperoodon_ampullatus,Artiodactyla,Ziphiidae,Hyperoodon,Hyperoodon ampullatus,Marine Mammals
+Mesoplodon_bidens,Artiodactyla,Ziphiidae,Mesoplodon,Mesoplodon bidens,Marine Mammals
+Odobenus_rosmarus,Carnivora,Odobenidae,Odobenus,Odobenus rosmarus,Marine Mammals
+Arctocephalus_australis,Carnivora,Otariidae,Arctocephalus,Arctocephalus australis,Marine Mammals
+Arctocephalus_gazella,Carnivora,Otariidae,Arctocephalus,Arctocephalus gazella,Marine Mammals
+Arctocephalus_pusillus,Carnivora,Otariidae,Arctocephalus,Arctocephalus pusillus,Marine Mammals
+Arctocephalus_philippii,Carnivora,Otariidae,Arctocephalus,Arctocephalus townsendi,Marine Mammals
+Arctocephalus_tropicalis,Carnivora,Otariidae,Arctocephalus,Arctocephalus tropicalis,Marine Mammals
+Callorhinus_ursinus,Carnivora,Otariidae,Callorhinus,Callorhinus ursinus,Marine Mammals
+Otaria_byronia,Carnivora,Otariidae,Otaria,Otaria byronia,Marine Mammals
+Phocarctos_hookeri,Carnivora,Otariidae,Phocarctos,Phocarctos hookeri,Marine Mammals
+Zalophus_wollebaeki,Carnivora,Otariidae,Zalophus,Zalophus wollebaeki,Marine Mammals
+Halichoerus_grypus,Carnivora,Phocidae,Halichoerus,Halichoerus grypus,Marine Mammals
+Leptonychotes_weddellii,Carnivora,Phocidae,Leptonychotes,Leptonychotes weddellii,Marine Mammals
+Monachus_monachus,Carnivora,Phocidae,Monachus,Monachus monachus,Marine Mammals
+Neomonachus_schauinslandi,Carnivora,Phocidae,Neomonachus,Neomonachus schauinslandi,Marine Mammals
+Phoca_vitulina,Carnivora,Phocidae,Phoca,Phoca vitulina,Marine Mammals
+Pusa_hispida,Carnivora,Phocidae,Pusa,Pusa hispida,Marine Mammals
+Trichechus_manatus,Sirenia,Trichechidae,Trichechus,Trichechus manatus,Marine Mammals
+Sarcophilus_harrisii,Dasyuromorphia,Dasyuridae,Sarcophilus,Sarcophilus harrisii,Marsupials
+Didelphis_albiventris,Didelphimorphia,Didelphidae,Didelphis,Didelphis albiventris,Marsupials
+Didelphis_aurita,Didelphimorphia,Didelphidae,Didelphis,Didelphis aurita,Marsupials
+Marmosops_incanus,Didelphimorphia,Didelphidae,Marmosops,Marmosops incanus,Marsupials
+Metachirus_nudicaudatus,Didelphimorphia,Didelphidae,Metachirus,Metachirus nudicaudatus,Marsupials
+Micoureus_paraguayanus,Didelphimorphia,Didelphidae,Marmosa,Marmosa paraguayana,Marsupials
+Philander_frenatus,Didelphimorphia,Didelphidae,Philander,Philander frenatus,Marsupials
+Thylamys_elegans,Didelphimorphia,Didelphidae,Thylamys,Thylamys elegans,Marsupials
+Macropus_fuliginosus,Diprotodontia,Macropodidae,Macropus,Macropus fuliginosus,Marsupials
+Macropus_giganteus,Diprotodontia,Macropodidae,Macropus,Macropus giganteus,Marsupials
+Macropus_rufus,Diprotodontia,Macropodidae,Macropus,Macropus rufus,Marsupials
+Setonix_brachyurus,Diprotodontia,Macropodidae,Setonix,Setonix brachyurus,Marsupials
+Petaurus_norfolcensis,Diprotodontia,Petauridae,Petaurus,Petaurus norfolcensis,Marsupials
+Trichosurus_vulpecula,Diprotodontia,Phalangeridae,Trichosurus,Trichosurus vulpecula,Marsupials
+Phascolarctos_cinereus,Diprotodontia,Phascolarctidae,Phascolarctos,Phascolarctos cinereus,Marsupials
+Vombatus_ursinus,Diprotodontia,Vombatidae,Vombatus,Vombatus ursinus,Marsupials
+Alouatta_palliata,Primates,Atelidae,Alouatta,Alouatta palliata,Primates
+Alouatta_seniculus,Primates,Atelidae,Alouatta,Alouatta seniculus,Primates
+Ateles_geoffroyi,Primates,Atelidae,Ateles,Ateles geoffroyi,Primates
+Brachyteles_arachnoides,Primates,Atelidae,Brachyteles,Brachyteles arachnoides,Primates
+Cebus_capucinus,Primates,Cebidae,Cebus,Cebus capucinus,Primates
+Saimiri_vanzolinii,Primates,Cebidae,Saimiri,Saimiri vanzolinii,Primates
+Chlorocebus_sabaeus,Primates,Cercopithecidae,Chlorocebus,Chlorocebus sabaeus,Primates
+Colobus_guereza,Primates,Cercopithecidae,Colobus,Colobus guereza,Primates
+Macaca_mulatta,Primates,Cercopithecidae,Macaca,Macaca mulatta,Primates
+Piliocolobus_tephrosceles,Primates,Cercopithecidae,Piliocolobus,Piliocolobus tephrosceles,Primates
+Pan_paniscus,Primates,Hominidae,Pan,Pan paniscus,Primates
+Hylobates_agilis,Primates,Hylobatidae,Hylobates,Hylobates agilis,Primates
+Lemur_catta,Primates,Lemuridae,Lemur,Lemur catta,Primates
+Antilocapra_americana,Artiodactyla,Antilocapridae,Antilocapra,Antilocapra americana,Ungulates
+Aepyceros_melampus,Artiodactyla,Bovidae,Aepyceros,Aepyceros melampus,Ungulates
+Alcelaphus_buselaphus,Artiodactyla,Bovidae,Alcelaphus,Alcelaphus buselaphus,Ungulates
+Bison_bison,Artiodactyla,Bovidae,Bison,Bison bison,Ungulates
+Bison_bonasus,Artiodactyla,Bovidae,Bison,Bison bonasus,Ungulates
+Bos_frontalis,Artiodactyla,Bovidae,Bos,Bos frontalis,Ungulates
+Capra_ibex,Artiodactyla,Bovidae,Capra,Capra ibex,Ungulates
+Capra_pyrenaica,Artiodactyla,Bovidae,Capra,Capra pyrenaica,Ungulates
+Capricornis_sumatraensis,Artiodactyla,Bovidae,Capricornis,Capricornis sumatraensis,Ungulates
+Connochaetes_taurinus,Artiodactyla,Bovidae,Connochaetes,Connochaetes taurinus,Ungulates
+Damaliscus_korrigum,Artiodactyla,Bovidae,Damaliscus,Damaliscus korrigum,Ungulates
+Damaliscus_lunatus,Artiodactyla,Bovidae,Damaliscus,Damaliscus lunatus,Ungulates
+Eudorcas_rufifrons,Artiodactyla,Bovidae,Eudorcas,Eudorcas rufifrons,Ungulates
+Eudorcas_thomsonii,Artiodactyla,Bovidae,Eudorcas,Eudorcas thomsonii,Ungulates
+Gazella_dorcas,Artiodactyla,Bovidae,Gazella,Gazella dorcas,Ungulates
+Gazella_gazella,Artiodactyla,Bovidae,Gazella,Gazella gazella,Ungulates
+Hippotragus_equinus,Artiodactyla,Bovidae,Hippotragus,Hippotragus equinus,Ungulates
+Hippotragus_niger,Artiodactyla,Bovidae,Hippotragus,Hippotragus niger,Ungulates
+Kobus_ellipsiprymnus,Artiodactyla,Bovidae,Kobus,Kobus ellipsiprymnus,Ungulates
+Kobus_kob,Artiodactyla,Bovidae,Kobus,Kobus kob,Ungulates
+Litocranius_walleri,Artiodactyla,Bovidae,Litocranius,Litocranius walleri,Ungulates
+Nanger_granti,Artiodactyla,Bovidae,Nanger,Nanger granti,Ungulates
+Oreotragus_oreotragus,Artiodactyla,Bovidae,Oreotragus,Oreotragus oreotragus,Ungulates
+Oryx_beisa,Artiodactyla,Bovidae,Oryx,Oryx beisa,Ungulates
+Oryx_leucoryx,Artiodactyla,Bovidae,Oryx,Oryx leucoryx,Ungulates
+Ovibos_moschatus,Artiodactyla,Bovidae,Ovibos,Ovibos moschatus,Ungulates
+Ovis_aries,Artiodactyla,Bovidae,Ovis,Ovis aries,Ungulates
+Ovis_dalli,Artiodactyla,Bovidae,Ovis,Ovis dalli,Ungulates
+Raphicerus_campestris,Artiodactyla,Bovidae,Raphicerus,Raphicerus campestris,Ungulates
+Redunca_arundinum,Artiodactyla,Bovidae,Redunca,Redunca arundinum,Ungulates
+Redunca_redunca,Artiodactyla,Bovidae,Redunca,Redunca redunca,Ungulates
+Rupicapra_pyrenaica,Artiodactyla,Bovidae,Rupicapra,Rupicapra pyrenaica,Ungulates
+Rupicapra_rupicapra,Artiodactyla,Bovidae,Rupicapra,Rupicapra rupicapra,Ungulates
+Saiga_tatarica,Artiodactyla,Bovidae,Saiga,Saiga tatarica,Ungulates
+Sylvicapra_grimmia,Artiodactyla,Bovidae,Sylvicapra,Sylvicapra grimmia,Ungulates
+Syncerus_caffer,Artiodactyla,Bovidae,Syncerus,Syncerus caffer,Ungulates
+Tragelaphus_buxtoni,Artiodactyla,Bovidae,Tragelaphus,Tragelaphus buxtoni,Ungulates
+Taurotragus_oryx,Artiodactyla,Bovidae,Tragelaphus,Tragelaphus oryx,Ungulates
+Tragelaphus_scriptus,Artiodactyla,Bovidae,Tragelaphus,Tragelaphus scriptus,Ungulates
+Tragelaphus_strepsiceros,Artiodactyla,Bovidae,Tragelaphus,Tragelaphus strepsiceros,Ungulates
+Lama_glama,Artiodactyla,Camelidae,Lama,Lama guanicoe,Ungulates
+Vicugna_vicugna,Artiodactyla,Camelidae,Vicugna,Vicugna vicugna,Ungulates
+Alces_alces,Artiodactyla,Cervidae,Alces,Alces alces,Ungulates
+Alces_americanus,Artiodactyla,Cervidae,Alces,Alces americanus,Ungulates
+Capreolus_capreolus,Artiodactyla,Cervidae,Capreolus,Capreolus capreolus,Ungulates
+Capreolus_pygargus,Artiodactyla,Cervidae,Capreolus,Capreolus pygargus,Ungulates
+Cervus_elaphus,Artiodactyla,Cervidae,Cervus,Cervus elaphus,Ungulates
+Cervus_nippon,Artiodactyla,Cervidae,Cervus,Cervus nippon,Ungulates
+Dama_dama,Artiodactyla,Cervidae,Dama,Dama dama,Ungulates
+Muntiacus_muntjak,Artiodactyla,Cervidae,Muntiacus,Muntiacus muntjak,Ungulates
+Odocoileus_hemionus,Artiodactyla,Cervidae,Odocoileus,Odocoileus hemionus,Ungulates
+Odocoileus_virginianus,Artiodactyla,Cervidae,Odocoileus,Odocoileus virginianus,Ungulates
+Rangifer_tarandus,Artiodactyla,Cervidae,Rangifer,Rangifer tarandus,Ungulates
+Rucervus_eldii,Artiodactyla,Cervidae,Rucervus,Rucervus eldii,Ungulates
+Rusa_unicolor,Artiodactyla,Cervidae,Rusa,Rusa unicolor,Ungulates
+Giraffa_camelopardalis,Artiodactyla,Giraffidae,Giraffa,Giraffa camelopardalis,Ungulates
+Hippopotamus_amphibius,Artiodactyla,Hippopotamidae,Hippopotamus,Hippopotamus amphibius,Ungulates
+Phacochoerus_aethiopicus,Artiodactyla,Suidae,Phacochoerus,Phacochoerus aethiopicus,Ungulates
+Phacochoerus_africanus,Artiodactyla,Suidae,Phacochoerus,Phacochoerus africanus,Ungulates
+Sus_scrofa,Artiodactyla,Suidae,Sus,Sus scrofa,Ungulates
+Pecari_tajacu,Artiodactyla,Tayassuidae,Pecari,Pecari tajacu,Ungulates
+Equus_grevyi,Perissodactyla,Equidae,Equus,Equus grevyi,Ungulates
+Equus_quagga,Perissodactyla,Equidae,Equus,Equus quagga,Ungulates
+Ceratotherium_simum,Perissodactyla,Rhinocerotidae,Ceratotherium,Ceratotherium simum,Ungulates
+Diceros_bicornis,Perissodactyla,Rhinocerotidae,Diceros,Diceros bicornis,Ungulates

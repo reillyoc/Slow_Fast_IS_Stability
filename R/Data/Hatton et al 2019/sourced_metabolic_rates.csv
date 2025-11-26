@@ -1,0 +1,14 @@
+X,Plot,Plot2,Major_taxa,Order,Species,Mass_g,Metabolism_W,Trophic,Group,Mass_Spec_Meta_Watt,Inverse_Mass_Spec_Meta_Watt
+,,,Mammal,Carnivora,Felis silvestris,3000,6.319,,,0.002106333,474.7586643
+,,,Mammal,Rodentia,Glaucomys sabrinus,102.03,0.62,,,0.006076644,164.5645161
+,,,Mammal,Chiroptera,Myotis daubentonii,7.875,0.04083,,,0.005184762,192.8728876
+,,,Mammal,Chiroptera,Myotis myotis,25,0.1389,,,0.005556,179.9856012
+,,,Mammal,Chiroptera,Myotis nattereri,7.6,0.04833,,,0.006359211,157.2522243
+,,,Mammal,Rodentia,Neotamias amoenus,57.1,0.53,,,0.009281961,107.7358491
+,,,Mammal,Chiroptera,Rhinolophus ferrumequinum,18,0.2583,,,0.01435,69.68641115
+,,,Mammal,Artiodactyla,Rupicapra rupicapra,40000,36.3426,,,0.000908565,1100.636718
+,,,Mammal,Rodentia,Sciurus vulgaris,352.8,0.9016,,,0.002555556,391.3043478
+,,,Mammal,Soricomorpha,Sorex caecutiens          ,3.6,0.17,,,0.047222222,21.17647059
+,,,Mammal,Soricomorpha,Sorex isodon,11.1,0.5106,,,0.046,21.73913043
+,,,Mammal,Soricomorpha,Sorex minutissimus,2.5,0.215,,,0.086,11.62790698
+,,,Mammal,Soricomorpha,Sorex monticolus,14.4,0.38752,,,0.026911111,37.15937242
