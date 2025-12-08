@@ -20,7 +20,7 @@ Mammal Phylogeny
 
 Throughout scripts, figures are saved via file path. For proper functionality ensure file paths are changed.
 
-# Julia (v 1.8)
+# Julia (v 1.10.5)
 Julia script is for a deterministic and stochastic Rozensweig-MacArthur CR model to reproduce theoretical results in Box 1 of manuscript. 
 
 # R (v 4.4.0)
