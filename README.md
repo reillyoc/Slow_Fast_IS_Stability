@@ -8,15 +8,15 @@ Population Abundance Time Series
 
 Body Size
   - Myrvhold et al 2015 - https://esajournals.onlinelibrary.wiley.com/doi/10.1890/15-0846R.1
-
-Mammal Phylogeny 
-  - Faubry et al 2018 - https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2443
   
 Allometric Scaling
   - Hatton et al 2019 - https://www.pnas.org/doi/abs/10.1073/pnas.1900492116
 
 Mammal Life History Trait Space
   - Beccari et al 2024 - https://onlinelibrary.wiley.com/doi/full/10.1111/ele.14445
+
+Mammal Phylogeny 
+  - Upham et al 2019 - https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.3000494
 
 Throughout scripts, figures are saved via file path. For proper functionality ensure file paths are changed.
 
