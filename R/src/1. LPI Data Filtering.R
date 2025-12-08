@@ -18,7 +18,7 @@ library(wql)
 library(trend)
 
 #load data
-df_lpi <- read.csv("../R/Data/Living Planet Index/LPD2022_public/LPD2022_public.csv", header = T)
+df_lpi <- read.csv("../Slow_Fast_IS_Stability/R/Data/Living Planet Index/LPD2022_public/LPD2022_public.csv", header = T)
 
 ##### Code #####
 ##### Organize Data and Subset for Mammals #####
@@ -361,5 +361,5 @@ df_lpi_detrended_notrend <- rbind(df_lpi_notrend, df_lpi_detrended)
 unique(df_lpi_detrended_notrend$ID)
 unique(df_lpi_detrended_notrend$Binomial)
 
-#write.csv(df_lpi_detrended_notrend, "../R/Data/Living Planet Index/TS_lpi_detrended.csv")
+write.csv(df_lpi_detrended_notrend, "../Slow_Fast_IS_Stability/R/Outputs/TS_lpi_detrended.csv")
 

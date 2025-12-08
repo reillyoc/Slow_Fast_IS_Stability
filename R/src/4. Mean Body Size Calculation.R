@@ -9,9 +9,9 @@ library(RColorBrewer)
 library(beepr)
 
 #load all data
-df_metab <- read.csv("../R/Data/slow_fast_metabolism resolved taxonomy.csv", header = T)
-df_growth <- read.csv("../R/Data/slow_fast_growth resolved taxonomy.csv", header = T)
-df_body_sizes <- read.csv("../R/Data/Amniote database resolved taxonomy.csv", header = T)
+df_metab <- read.csv("../Slow_Fast_IS_Stability/R/Outputs/slow_fast_metabolism resolved taxonomy.csv", header = T)
+df_growth <- read.csv("../Slow_Fast_IS_Stability/R/Outputs/slow_fast_growth resolved taxonomy.csv", header = T)
+df_body_sizes <- read.csv("../Slow_Fast_IS_Stability/R/Outputs/Amniote database resolved taxonomy.csv", header = T)
 
 ##### Code #####
 #reduce dataframes to just body mass and species... 
@@ -34,6 +34,6 @@ unique(df_bs_sp$GBIF_ID)
 
 options(scipen = 999)
 
-write.csv(df_bs_sp, "../R/Data/mean species body size.csv")
+write.csv(df_bs_sp, "../Slow_Fast_IS_Stability/R/Outputs/mean species body size.csv")
 
 

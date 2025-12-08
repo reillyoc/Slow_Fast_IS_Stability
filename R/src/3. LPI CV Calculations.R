@@ -16,20 +16,14 @@ library(urca)
 library(wql)
 library(trend)
 
-source("../R/Functions.R")
+source("../Slow_Fast_IS_Stability/R/src/0. Functions.R")
 
 #load data
-#All TS
-#df_lpi <- read.csv("../R/Data/Living Planet Index/TS_lpi_all.csv", header = T)
-
-#All TS without significant trends
-#df_lpi <- read.csv("../R/Data/Living Planet Index/TS_lpi_notrend.csv", header = T)
-
 #All TS without trends + detrended
-df_lpi <- read.csv("../R/Data/TS_lpi_detrended resolved taxonomy.csv", header = T)
-
+df_lpi <- read.csv("../Slow_Fast_IS_Stability/R/Outputs/TS_lpi_detrended resolved taxonomy.csv", header = T)
 
 ##### CV Calculation #####
+#Option
 #Filter by Maximum number of Years in TS
 #df_lpi <- df_lpi %>% filter(unique_years > 19)
 
@@ -157,12 +151,10 @@ df_lpi_info_unique <- as.data.frame(unique(df_lpi_info))
 
 df_lpi_cv_fin <- merge(df_lpi_cv, df_lpi_info_unique, by = "ID")
 
-#write.csv(df_lpi_cv_fin, "../R/Data/lpi mammal population cv all.csv")
-#write.csv(df_lpi_cv_fin, "../R/Data/lpi mammal population cv no trends.csv")
-#write.csv(df_lpi_cv_fin, "../R/Data/lpi mammal population cv detrended resolved taxonomy.csv")
+# write.csv(df_lpi_cv_fin, "../Slow_Fast_IS_Stability/R/Outputs/lpi mammal population cv detrended resolved taxonomy.csv")
 
 
-##### Calculate CV based on Lifespan ##### 
+##### Estimate CV based on Generation Length (Age of Maturity) ##### 
 #Beccari et al 2024
 df_mammal_long <- read.csv("../R/Data/Amniote database resolved taxonomy.csv", header = T)
 
