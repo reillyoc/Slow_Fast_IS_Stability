@@ -35,7 +35,7 @@ df_tree <- readRDS("../Slow_Fast_IS_Stability/R/Data/PhilogenyReady.rds")
 
 #Living Planet Index CV Calculations
 df_lpi <- read.csv("../Slow_Fast_IS_Stability/R/Outputs/lpi mammal population cv detrended resolved taxonomy.csv", header = T)
-# df_lpi <- read.csv("../Slow_Fast_IS_Stability/R/Outputs/lpi mammal population cv detrended resolved taxonomy lifespan windows.csv", header = T)
+df_lpi <- read.csv("../Slow_Fast_IS_Stability/R/Outputs/lpi mammal population cv detrended resolved taxonomy lifespan windows.csv", header = T)
 
 unique(df_lpi$ID)
 unique(df_lpi$Binomial)

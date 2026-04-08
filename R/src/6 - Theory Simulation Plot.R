@@ -7,7 +7,7 @@
 library(tidyverse)
 library(cowplot)
 
-source("../Slow_Fast_IS_Stability/R/src/0. Functions.R")
+source("../Slow_Fast_IS_Stability/R/src/0 - Functions.R")
 
 # load data
 df_cr_is_flux <- read.csv("../Slow_Fast_IS_Stability/Julia/Outputs/CR_IS_Flux_rmax.csv")
@@ -34,7 +34,7 @@ gg_cr_is_flux <- ggplot(df_cr_is_flux, aes(x = rmax, y = interaction_strength_fl
   #scale_fill_gradient(low = "#3CA373", high = "#EB8F00") +
   ylab("Interaction Strength (Flux)") +
   xlab("Growth Potential (rmax)") +
-  theme_classic(base_size = 14) +
+  theme_classic(base_size = 16) +
   theme(
         legend.position = "none",
         text = element_text(family = "Arial")) +
@@ -52,7 +52,7 @@ gg_cr_cv_rmax <- ggplot(df_cr, aes(x = rmax_increase, y = k_cv)) +
   #scale_fill_gradient(low = "#3CA373", high = "#EB8F00") +
   ylab("Temporal Variabiltiy (CV)") +
   xlab("Growth Potential (rmax)") +
-  theme_classic(base_size = 14) +
+  theme_classic(base_size = 16) +
   theme(
     legend.position = "none",
     text = element_text(family = "Arial")) +
