@@ -110,8 +110,45 @@ priors <- c(
   set_prior("student_t(3, 0, 10)", class = "sigma")
 )
 
+priors_null <- c(
+  set_prior("normal(0, 1)", class = "Intercept"),
+  set_prior("student_t(3, 0, 10)", class = "sd", group = "phylo"),
+  set_prior("student_t(3, 0, 10)", class = "sigma")
+)
 
-brms_bs_rmax <- brm(
+brms_rmax_null <- brm(
+  formula = log_rmax ~ 1 + (1 | gr(phylo, cov = A)),
+  data = df_rmax_fs_sub,
+  data2 = list(A = rmax_fs_corrma),
+  prior = priors_null,
+  family = gaussian(),
+  chains = 4, cores = 4, 
+  warmup = 2000, iter = 4000,
+  control = list(adapt_delta = 0.95),
+  sample_prior = "yes",
+  save_pars = save_pars(all = TRUE)
+)
+
+loo_rmax_null <- loo(brms_rmax_null)
+loo_rmax_null
+
+brms_rmax_bs <- brm(
+  formula = log_rmax ~ sc_log_mean_body_mass + (1 | gr(phylo, cov = A)),
+  data = df_rmax_fs_sub,
+  data2 = list(A = rmax_fs_corrma),
+  prior = priors,
+  family = gaussian(),
+  chains = 4, cores = 4, 
+  warmup = 2000, iter = 4000,
+  control = list(adapt_delta = 0.95),
+  sample_prior = "yes",
+  save_pars = save_pars(all = TRUE)
+)
+
+loo_rmax_bs <- loo(brms_rmax_bs)
+loo_rmax_bs
+
+brms_rmax_bs_pc1 <- brm(
   formula = log_rmax ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A)),
   data = df_rmax_fs_sub,
   data2 = list(A = rmax_fs_corrma),
@@ -124,17 +161,21 @@ brms_bs_rmax <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_bs_rmax <- loo(brms_bs_rmax)
-loo_bs_rmax
+loo_rmax_bs_pc1 <- loo(brms_rmax_bs_pc1)
+loo_rmax_bs_pc1
 
-brms_bs_rmax
-pp_check(brms_bs_rmax, ndraws = 100)
-bayes_R2(brms_bs_rmax, probs = c(0.055, 0.945))
-summary(brms_bs_rmax, prob = 0.89)
-plot(brms_bs_rmax)
+r2_bayes(brms_rmax_null)
+r2_bayes(brms_rmax_bs)
+r2_bayes(brms_rmax_bs_pc1)
+
+brms_rmax_bs_pc1
+pp_check(brms_rmax_bs_pc1, ndraws = 100)
+bayes_R2(brms_rmax_bs_pc1, probs = c(0.055, 0.945))
+summary(brms_rmax_bs_pc1, prob = 0.89)
+plot(brms_rmax_bs_pc1)
 
 #Estimates of body size unscaled
-draws <- as_draws_df(brms_bs_rmax) %>%
+draws <- as_draws_df(brms_rmax_bs_pc1) %>%
   mutate(
     beta_x  = b_sc_log_mean_body_mass / sd(df_rmax_fs_sub$log_mean_body_mass),
     alpha_x = b_Intercept - b_sc_log_mean_body_mass * mean(df_rmax_fs_sub$log_mean_body_mass) / sd(df_rmax_fs_sub$log_mean_body_mass)
@@ -157,12 +198,15 @@ df_pred_bs <- tibble(
 
 
 #Get expected posterior predictions
-epred_draws_bs <- add_epred_draws(brms_bs_rmax, newdata = df_pred_bs, re_formula = NA)
+epred_draws_bs <- add_epred_draws(brms_rmax_bs_pc1, newdata = df_pred_bs, re_formula = NA)
 
 gg_epred_bs <- ggplot(epred_draws_bs, aes(x = log_mean_body_mass, y = .epred)) +
-  # geom_point(data = df_rmax_fs_sub, aes(x = log_mean_body_mass, y = log_rmax),
-  #            shape = 21, size = 2.5, stroke = 0.5, color = "black", fill = "aliceblue") +
-  stat_lineribbon(aes(fill = after_stat(.width)), .width = 0.89, alpha = 0.65, linewidth = 2.0, color = "black", fill = "grey") +
+  geom_point(data = df_rmax_fs_sub, aes(x = log_mean_body_mass, y = log_rmax), size = 2.5, 
+             # stroke = 0.5, shape = 21,
+             color = "black", #fill = "aliceblue",
+             alpha = 0.15) +
+  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
+                  color = "blue3", fill = "grey") +
   labs(x = "log(Body Mass)", y = "Predicted log(rmax)") +
   # scale_fill_gradient(low = "#3CA373", high = "#EB8F00") +
   theme_classic(base_size = 14) +
@@ -180,12 +224,15 @@ df_pred_pc1 <- tibble(
 )
 
 #Get expected posterior predictions
-epred_draws_pc1 <- add_epred_draws(brms_bs_rmax, newdata = df_pred_pc1, re_formula = NA)
+epred_draws_pc1 <- add_epred_draws(brms_rmax_bs_pc1, newdata = df_pred_pc1, re_formula = NA)
 
 gg_epred_pc1 <- ggplot(epred_draws_pc1, aes(x = PC1, y = .epred)) +
-  # geom_point(data = df_rmax_fs_sub, aes(x = PC1, y = log_rmax),
-  #            shape = 21, size = 2.5, stroke = 0.5, color = "black", fill = "aliceblue") +
-  stat_lineribbon(aes(fill = after_stat(.width)), .width = 0.89, alpha = 0.65, linewidth = 2.0, color = "black", fill = "grey") +
+  geom_point(data = df_rmax_fs_sub, aes(x = PC1, y = log_rmax), size = 2.5, 
+             # stroke = 0.5, shape = 21,
+             color = "black", #fill = "aliceblue",
+             alpha = 0.15) +
+  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
+                  color = "blue3", fill = "grey") +
   labs(x = "PC1", y = "Predicted log(rmax)") +
   theme_classic(base_size = 14) +
   scale_y_continuous(limits = c(-2.25, 1.4), breaks = scales::pretty_breaks()) +
@@ -194,16 +241,15 @@ gg_epred_pc1 <- ggplot(epred_draws_pc1, aes(x = PC1, y = .epred)) +
 
 gg_epred_pc1
 
-gg_epred_bs_pc1 <- plot_grid(gg_epred_bs, gg_epred_pc1, nrow = 1, align = 'hv')
+gg_epred_bs_pc1 <- plot_grid(gg_epred_bs, gg_epred_pc1, nrow = 1, align = 'hv', labels = c("a", "b"))
 gg_epred_bs_pc1
 
-# ggsave("../R/Figures/Figure 1 - Bayesian Rmax - Body Size.jpeg", plot = gg_epred_bs_pc1, width = 8, height = 4)
-
+# ggsave("../Slow_Fast_IS_Stability/R/Figures/Figure 1 - Bayesian Rmax - Body Size.jpeg", plot = gg_epred_bs_pc1, width = 8, height = 4)
 
 ###### Extract Posteriors for use as Priors in CV ~ rmax Models later ######
-post_fixef_bspc <- data.frame(fixef(brms_bs_rmax))
-post_sigma_bspc <- data.frame(posterior_summary(brms_bs_rmax, variable = "sigma"))
-post_sd_phy_bspc <- data.frame(posterior_summary(brms_bs_rmax, variable = "sd_phylo__Intercept"))
+post_fixef_bspc <- data.frame(fixef(brms_rmax_bs_pc1))
+post_sigma_bspc <- data.frame(posterior_summary(brms_rmax_bs_pc1, variable = "sigma"))
+post_sd_phy_bspc <- data.frame(posterior_summary(brms_rmax_bs_pc1, variable = "sd_phylo__Intercept"))
 
 ##### Relationship between CV ~ Body Size + PC1 #####
 ###### Format and Combine CV, BS, FS Data #####
@@ -361,11 +407,17 @@ priors_kcv_bs <- c(
   # set_prior("student_t(3, 0, 10)", class = "sigma")
 )
 
-brms_k_cv_bs <- brm(
-  formula = mean_k_cv ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A)),
+priors_kcv_null <- c(
+  set_prior("normal(0, 1)", class = "Intercept"),
+  set_prior("student_t(3, 0, 10)", class = "sd", group = "phylo"),
+  set_prior("exponential(1)", class = "phi")
+)
+
+brms_kcv_null <- brm(
+  formula = mean_k_cv ~ 1 + (1 | gr(phylo, cov = A)),
   data = df_mammal_cv_bs_fs_w,
   data2 = list(A = cv_fs_corrma),
-  prior = priors_kcv_bs,
+  prior = priors_kcv_null,
   family = 
     # gaussian(),
     Beta(link = "logit"),
@@ -376,17 +428,59 @@ brms_k_cv_bs <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_bs_rmax <- loo(brms_k_cv_bs)
-loo_bs_rmax
+loo_kcv_null <- loo(brms_kcv_null)
+loo_kcv_null
 
-pp_check(brms_k_cv_bs, ndraws = 100)
-bayes_R2(brms_k_cv_bs, probs = c(0.055, 0.945))
-summary(brms_k_cv_bs, prob = 0.89)
-plot(brms_k_cv_bs)
+brms_kcv_bs <- brm(
+  formula = mean_k_cv ~ sc_log_mean_body_mass + (1 | gr(phylo, cov = A)),
+  data = df_mammal_cv_bs_fs_w,
+  data2 = list(A = cv_fs_corrma),
+  prior = 
+    priors_kcv_bs,
+  family = 
+    # gaussian(),
+    Beta(link = "logit"),
+  chains = 4, cores = 4, 
+  warmup = 2000, iter = 4000,
+  control = list(adapt_delta = 0.99),
+  sample_prior = "yes",
+  save_pars = save_pars(all = TRUE)
+)
+
+loo_kcv_bs <- loo(brms_kcv_bs)
+loo_kcv_bs
+
+brms_kcv_bs_pc1 <- brm(
+  formula = mean_k_cv ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A)),
+  data = df_mammal_cv_bs_fs_w,
+  data2 = list(A = cv_fs_corrma),
+  prior = 
+    priors_kcv_bs,
+  family = 
+    # gaussian(),
+    Beta(link = "logit"),
+  chains = 4, cores = 4, 
+  warmup = 2000, iter = 4000,
+  control = list(adapt_delta = 0.99),
+  sample_prior = "yes",
+  save_pars = save_pars(all = TRUE)
+)
+
+loo_kcv_bs_pc1 <- loo(brms_kcv_bs_pc1)
+loo_kcv_bs_pc1
+
+r2_bayes(brms_kcv_null)
+r2_bayes(brms_kcv_bs)
+r2_bayes(brms_kcv_bs_pc1)
+
+pp_check(brms_kcv_bs_pc1, ndraws = 100)
+bayes_R2(brms_kcv_bs_pc1, probs = c(0.055, 0.945))
+summary(brms_kcv_bs_pc1, prob = 0.89)
+plot(brms_kcv_bs_pc1)
 
 
 #Estimates of body size unscaled
-draws <- as_draws_df(brms_k_cv_bs) %>%
+draws <- as_draws_df(brms_kcv_bs_pc1) %>%
   mutate(
     beta_x  = b_sc_log_mean_body_mass / sd(df_mammal_cv_bs_fs_w$log_mean_body_mass),
     alpha_x = b_Intercept - b_sc_log_mean_body_mass * mean(df_mammal_cv_bs_fs_w$log_mean_body_mass) / sd(df_mammal_cv_bs_fs_w$log_mean_body_mass)
@@ -409,12 +503,15 @@ df_pred_bs_cv <- tibble(
 )
 
 #Posterior predictions
-epred_draws_bs_cv <- add_epred_draws(brms_k_cv_bs, newdata = df_pred_bs_cv, re_formula = NA)
+epred_draws_bs_cv <- add_epred_draws(brms_kcv_bs_pc1, newdata = df_pred_bs_cv, re_formula = NA)
 
 gg_epred_bs_cv <- ggplot(epred_draws_bs_cv, aes(x = log_mean_body_mass, y = .epred)) +
-  # geom_point(data = df_mammal_cv_bs_fs_w, aes(x = log_mean_body_mass, y = mean_k_cv),
-  #            shape = 21, size = 2.5, stroke = 0.5, color = "black", fill = "aliceblue") +
-  stat_lineribbon(aes(fill = after_stat(.width)), .width = 0.95, alpha = 0.65, linewidth = 2.0, color = "black", fill = "grey") +
+  geom_point(data = df_mammal_cv_bs_fs_w, aes(x = log_mean_body_mass, y = mean_k_cv), size = 2.5, 
+             # stroke = 0.5, shape = 21,
+             color = "black", #fill = "aliceblue",
+             alpha = 0.15) +
+  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
+                  color = "blue3", fill = "grey") +
   labs(x = "log(Body Mass)", y = "Predicted CV (k)") +
   theme_classic(base_size = 14) +
   scale_y_continuous(breaks = scales::pretty_breaks()) +
@@ -424,15 +521,18 @@ gg_epred_bs_cv <- ggplot(epred_draws_bs_cv, aes(x = log_mean_body_mass, y = .epr
 gg_epred_bs_cv
 
 #Posterior predictions
-linpred_draws_bs_cv <- add_linpred_draws(brms_k_cv_bs, newdata = df_pred_bs_cv, re_formula = NA)
+linpred_draws_bs_cv <- add_linpred_draws(brms_kcv_bs_pc1, newdata = df_pred_bs_cv, re_formula = NA)
 
 gg_linpred_bs_cv <- ggplot(linpred_draws_bs_cv, aes(x = log_mean_body_mass, y = .linpred)) +
-  # geom_point(data = df_mammal_cv_bs_fs_w, aes(x = log_mean_body_mass, y = mean_k_cv),
-  #            shape = 21, size = 2.5, stroke = 0.5, color = "black", fill = "aliceblue") +
-  stat_lineribbon(aes(fill = after_stat(.width)), .width = 0.89, alpha = 0.65, linewidth = 2.0, color = "black", fill = "grey") +
+  geom_point(data = df_mammal_cv_bs_fs_w, aes(x = log_mean_body_mass, y = qlogis(mean_k_cv)), size = 2.5, 
+             # stroke = 0.5, shape = 21,
+             color = "black", #fill = "aliceblue",
+             alpha = 0.15) +
+  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
+                  color = "blue3", fill = "grey") +
   labs(x = "log(Body Mass)", y = "Predicted CV (logit)") +
   theme_classic(base_size = 14) +
-  scale_y_continuous(limits = c(-3.75, 2.15), breaks = scales::pretty_breaks()) +
+  scale_y_continuous(limits = c(-4.1, 2.15), breaks = scales::pretty_breaks()) +
   scale_x_continuous(breaks = scales::pretty_breaks()) +
   theme(legend.position = "none")
 
@@ -446,12 +546,15 @@ df_pred_pc1_cv <- tibble(
 )
 
 #Get expected posterior predictions
-epred_draws_pc1_cv <- add_epred_draws(brms_k_cv_bs, newdata = df_pred_pc1_cv, re_formula = NA)
+epred_draws_pc1_cv <- add_epred_draws(brms_kcv_bs_pc1, newdata = df_pred_pc1_cv, re_formula = NA)
 
 gg_epred_pc1_cv <- ggplot(epred_draws_pc1_cv, aes(x = PC1, y = .epred)) +
-  # geom_point(data = df_mammal_cv_bs_fs_w, aes(x = PC1, y = mean_k_cv),
-  #            shape = 21, size = 2.5, stroke = 0.5, color = "black", fill = "aliceblue") +
-  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0, color = "black", fill = "grey") +
+  geom_point(data = df_mammal_cv_bs_fs_w, aes(x = PC1, y = mean_k_cv), size = 2.5, 
+             # stroke = 0.5, shape = 21,
+             color = "black", #fill = "aliceblue",
+             alpha = 0.15) +
+  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
+                  color = "blue3", fill = "grey") +
   labs(x = "PC1", y = "Predicted CV (k)") +
   theme_classic(base_size = 14) +
   scale_y_continuous(breaks = scales::pretty_breaks()) +
@@ -461,31 +564,34 @@ gg_epred_pc1_cv <- ggplot(epred_draws_pc1_cv, aes(x = PC1, y = .epred)) +
 gg_epred_pc1_cv
 
 #Get expected posterior predictions
-linpred_draws_pc1_cv <- add_linpred_draws(brms_k_cv_bs, newdata = df_pred_pc1_cv, re_formula = NA)
+linpred_draws_pc1_cv <- add_linpred_draws(brms_kcv_bs_pc1, newdata = df_pred_pc1_cv, re_formula = NA)
 
 gg_linpred_pc1_cv <- ggplot(linpred_draws_pc1_cv, aes(x = PC1, y = .linpred)) +
-  # geom_point(data = df_mammal_cv_bs_fs_w, aes(x = PC1, y = mean_k_cv),
-  #            shape = 21, size = 2.5, stroke = 0.5, color = "black", fill = "aliceblue") +
-  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0, color = "black", fill = "grey") +
+  geom_point(data = df_mammal_cv_bs_fs_w, aes(x = PC1, y = qlogis(mean_k_cv)), size = 2.5, 
+             # stroke = 0.5, shape = 21,
+             color = "black", #fill = "aliceblue",
+             alpha = 0.15) +
+  stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
+                  color = "blue3", fill = "grey") +
   labs(x = "PC1", y = "Predicted CV (logit)") +
   theme_classic(base_size = 14) +
-  scale_y_continuous(limits = c(-3.75, 2.15), breaks = scales::pretty_breaks()) +
+  scale_y_continuous(limits = c(-4.1, 2.15), breaks = scales::pretty_breaks()) +
   scale_x_continuous(breaks = scales::pretty_breaks()) +
   theme(legend.position = "none")
 
 gg_linpred_pc1_cv
 
-
 gg_epred_bs_pc1_cv <- plot_grid(gg_epred_bs_cv, gg_epred_pc1_cv, nrow = 1, align = 'hv')
 gg_epred_bs_pc1_cv
 
-gg_linpred_bs_pc1_cv <- plot_grid(gg_linpred_bs_cv, gg_linpred_pc1_cv, nrow = 1, align = 'hv')
+gg_linpred_bs_pc1_cv <- plot_grid(gg_linpred_bs_cv, gg_linpred_pc1_cv, nrow = 1, align = 'hv', labels = c("c", "d"))
+
 gg_linpred_bs_pc1_cv
 
 gg_epred_fs_cv <- plot_grid(gg_epred_bs_pc1, gg_linpred_bs_pc1_cv, nrow = 2, align = "hv")
 gg_epred_fs_cv
 
-# ggsave("../R/Figures/Figure 2 - Predicted Rmax & CV ~ BS + PC1.jpeg", plot = gg_epred_fs_cv, width = 8, height = 8)
+# ggsave("../Slow_Fast_IS_Stability/R/Figures/Figure 2 - Predicted Rmax & CV ~ BS + PC1.jpeg", plot = gg_epred_fs_cv, width = 8, height = 8)
 
 
 ##### Joint model between CV ~ rmax & rmax ~ bs + PC1 #####
@@ -550,7 +656,6 @@ priors_updated <- c(
   set_prior("exponential(1)", class = "phi", resp = "meankcv")
   # set_prior("student_t(3, 0, 10)",    class = "sigma", resp = "logitkcv")
 )
-
 
 fit_joint_rmax_rpc <- brm(
     brms::bf(log_rmax ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
@@ -718,6 +823,7 @@ linpred_pc1_cv <- add_linpred_draws(fit_joint_rmax,
                                 )
 
 gg_rmax_cv <- ggplot(linpred_pc1_cv, aes(x = log_rmax, y = .linpred)) +
+  geom_point(as.data.frame(df_rmax_fs_lpi_sub_w), aes(x = log_rmax, y = logit_kcv, inherit.aes = F)) +
   stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
                   color = "black", fill = "grey60") +
   labs(x = "Growth Potential (log(rmax))", y = "Predicted CV") +
