@@ -129,7 +129,7 @@ brms_rmax_null <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_rmax_null <- loo(brms_rmax_null)
+loo_rmax_null <- brms::loo(brms_rmax_null)
 loo_rmax_null
 
 brms_rmax_bs <- brm(
@@ -145,7 +145,7 @@ brms_rmax_bs <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_rmax_bs <- loo(brms_rmax_bs)
+loo_rmax_bs <- brms::loo(brms_rmax_bs)
 loo_rmax_bs
 
 brms_rmax_bs_pc1 <- brm(
@@ -161,7 +161,7 @@ brms_rmax_bs_pc1 <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_rmax_bs_pc1 <- loo(brms_rmax_bs_pc1)
+loo_rmax_bs_pc1 <- brms::loo(brms_rmax_bs_pc1)
 loo_rmax_bs_pc1
 
 r2_bayes(brms_rmax_null)
@@ -347,7 +347,7 @@ brms_k_cv_group <- brm(
   control = list(adapt_delta = 0.99)
 )
 
-loo_bs_cv_group <- loo(brms_k_cv_group)
+loo_bs_cv_group <- brms::loo(brms_k_cv_group)
 loo_bs_cv_group
 
 pp_check(brms_k_cv_group, ndraws = 100)
@@ -428,7 +428,7 @@ brms_kcv_null <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_kcv_null <- loo(brms_kcv_null)
+loo_kcv_null <- brms::loo(brms_kcv_null)
 loo_kcv_null
 
 brms_kcv_bs <- brm(
@@ -447,7 +447,7 @@ brms_kcv_bs <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_kcv_bs <- loo(brms_kcv_bs)
+loo_kcv_bs <- brms::loo(brms_kcv_bs)
 loo_kcv_bs
 
 brms_kcv_bs_pc1 <- brm(
@@ -466,7 +466,7 @@ brms_kcv_bs_pc1 <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_kcv_bs_pc1 <- loo(brms_kcv_bs_pc1)
+loo_kcv_bs_pc1 <- brms::loo(brms_kcv_bs_pc1)
 loo_kcv_bs_pc1
 
 r2_bayes(brms_kcv_null)
@@ -657,6 +657,44 @@ priors_updated <- c(
   # set_prior("student_t(3, 0, 10)",    class = "sigma", resp = "logitkcv")
 )
 
+
+fit_joint_rmax_pc_bs <- brm(
+  brms::bf(log_rmax ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
+    brms::bf(mean_k_cv ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
+    set_rescor(F),
+  data = df_rmax_fs_lpi_sub_w,
+  data2 = list(A = rmax_fs_lpis_corrma),
+  prior = priors_updated,
+  family = list(gaussian(), 
+                # gaussian()
+                Beta(link = "logit")
+  ),  
+  chains = 4, cores = 4,
+  warmup = 2000, iter = 4000,
+  control = list(adapt_delta = 0.99),
+  sample_prior = "yes",
+  save_pars = save_pars(all = TRUE)
+)
+
+
+fit_joint_rmax_rpc_bs <- brm(
+    brms::bf(log_rmax ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
+    brms::bf(mean_k_cv ~ log_rmax + sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
+      set_rescor(F),
+    data = df_rmax_fs_lpi_sub_w,
+    data2 = list(A = rmax_fs_lpis_corrma),
+    prior = priors_updated,
+    family = list(gaussian(), 
+                  # gaussian()
+                  Beta(link = "logit")
+    ),  
+  chains = 4, cores = 4,
+  warmup = 2000, iter = 4000,
+  control = list(adapt_delta = 0.99),
+  sample_prior = "yes",
+  save_pars = save_pars(all = TRUE)
+)
+
 fit_joint_rmax_rpc <- brm(
     brms::bf(log_rmax ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
     brms::bf(mean_k_cv ~ log_rmax + PC1 + (1 | gr(phylo, cov = A))) +
@@ -675,10 +713,9 @@ fit_joint_rmax_rpc <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-
 fit_joint_rmax_rbs <- brm(
   brms::bf(log_rmax ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
-    brms::bf(mean_k_cv ~ log_rmax + log_mean_body_mass + (1 | gr(phylo, cov = A))) +
+    brms::bf(mean_k_cv ~ log_rmax + sc_log_mean_body_mass + (1 | gr(phylo, cov = A))) +
     set_rescor(F),
   data = df_rmax_fs_lpi_sub_w,
   data2 = list(A = rmax_fs_lpis_corrma),
@@ -712,19 +749,26 @@ fit_joint_rmax <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_bs_rmax_rpc <- loo(fit_joint_rmax_rpc)
+loo_bs_rmax_pc_bs <- brms::loo(fit_joint_rmax_pc_bs)
+loo_bs_rmax_pc_bs
+
+loo_bs_rmax_rpc_bs <- brms::loo(fit_joint_rmax_rpc_bs)
+loo_bs_rmax_rpc_bs
+
+loo_bs_rmax_rpc <- brms::loo(fit_joint_rmax_rpc)
 loo_bs_rmax_rpc
 
-loo_bs_rmax_rbs <- loo(fit_joint_rmax_rbs)
+loo_bs_rmax_rbs <- brms::loo(fit_joint_rmax_rbs)
 loo_bs_rmax_rbs
 
-loo_bs_rmax <- loo(fit_joint_rmax)
+loo_bs_rmax <- brms::loo(fit_joint_rmax)
 loo_bs_rmax
 
-loo_compare(loo_bs_rmax, loo_bs_rmax_rpc, loo_bs_rmax_rbs)
-loo_model_weights(list(loo_bs_rmax_rpc, loo_bs_rmax, loo_bs_rmax_rbs))
+loo_compare(loo_bs_rmax_pc_bs, loo_bs_rmax_rpc_bs, loo_bs_rmax, loo_bs_rmax_rpc, loo_bs_rmax_rbs)
+loo_model_weights(list(loo_bs_rmax_pc_bs, loo_bs_rmax_rpc_bs, loo_bs_rmax_rpc, loo_bs_rmax, loo_bs_rmax_rbs))
 
-pp_check(fit_joint_rmax, ndraws = 100, resp = "logrmax")
+pp_check(fit_joint_rmax_pc_bs, ndraws = 100, resp = "logrmax")
+pp_check(fit_joint_rmax_rpc_bs, ndraws = 100, resp = "logrmax")
 pp_check(fit_joint_rmax_rpc, ndraws = 100, resp = "meankcv")
 pp_check(fit_joint_rmax_rbs, ndraws = 100, resp = "meankcv")
 pp_check(fit_joint_rmax, ndraws = 100, resp = "meankcv")
@@ -823,9 +867,11 @@ linpred_pc1_cv <- add_linpred_draws(fit_joint_rmax,
                                 )
 
 gg_rmax_cv <- ggplot(linpred_pc1_cv, aes(x = log_rmax, y = .linpred)) +
-  geom_point(as.data.frame(df_rmax_fs_lpi_sub_w), aes(x = log_rmax, y = logit_kcv, inherit.aes = F)) +
+  geom_point(data = as.data.frame(df_rmax_fs_lpi_sub_w), aes(x = log_rmax, y = logit_kcv),
+             inherit.aes = FALSE, #shape = 21, stroke = 0.5,
+             size = 2.5, color = "black",alpha = 0.15) +
   stat_lineribbon(.width = 0.89, alpha = 0.65, linewidth = 2.0,
-                  color = "black", fill = "grey60") +
+                  color = "blue3", fill = "grey") +
   labs(x = "Growth Potential (log(rmax))", y = "Predicted CV") +
   theme_classic(base_size = 14) +
   scale_y_continuous(limits = c(-4.0, 1.8), breaks = scales::pretty_breaks()) +
@@ -834,7 +880,7 @@ gg_rmax_cv <- ggplot(linpred_pc1_cv, aes(x = log_rmax, y = .linpred)) +
 
 gg_rmax_cv
 
-# ggsave("../R/Figures/Figure 3 - Bayesian CV - Rmax.jpeg", plot = gg_rmax_cv, width = 5, height = 5)
+# ggsave("../Slow_Fast_IS_Stability/R/Figures/Figure 3 - Bayesian CV - Rmax.jpeg", plot = gg_rmax_cv, width = 5, height = 5)
 
 
 ##### Supplement Models ######
@@ -895,7 +941,7 @@ brms_bs_rmax <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_bs_rmax <- loo(brms_bs_rmax)
+loo_bs_rmax <- brms::loo(brms_bs_rmax)
 loo_bs_rmax
 
 brms_bs_rmax
@@ -1057,13 +1103,13 @@ brms_bs_rmax_metab_pc <- brm(
   control = list(adapt_delta = 0.99)
 )
 
-loo_bs_rmax_pc <- loo(brms_bs_rmax_pc)
+loo_bs_rmax_pc <- brms::loo(brms_bs_rmax_pc)
 loo_bs_rmax_pc
 
-loo_bs_rmax_metab <- loo(brms_bs_rmax_metab)
+loo_bs_rmax_metab <- brms::loo(brms_bs_rmax_metab)
 loo_bs_rmax_metab
 
-loo_bs_rmax_metab_pc <- loo(brms_bs_rmax_metab_pc)
+loo_bs_rmax_metab_pc <- brms::loo(brms_bs_rmax_metab_pc)
 loo_bs_rmax_metab_pc
 
 loo_compare(loo_bs_rmax_pc, loo_bs_rmax_metab, loo_bs_rmax_metab_pc)
@@ -1219,7 +1265,7 @@ brms_k_cv_bs_met <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-loo_bs_metab <- loo(brms_k_cv_bs_met)
+loo_bs_metab <- brms::loo(brms_k_cv_bs_met)
 loo_bs_metab
 
 pp_check(brms_k_cv_bs_met, ndraws = 100)
@@ -1451,11 +1497,11 @@ fit_joint_rmax <- brm(
   save_pars = save_pars(all = TRUE)
 )
 
-# loo_bs_rmax_rpc <- loo(fit_joint_rmax_rpc)
+# loo_bs_rmax_rpc <- brms::loo(fit_joint_rmax_rpc)
 # 
-# loo_bs_rmax_rbs <- loo(fit_joint_rmax_rbs)
+# loo_bs_rmax_rbs <- brms::loo(fit_joint_rmax_rbs)
 
-loo_bs_rmax <- loo(fit_joint_rmax)
+loo_bs_rmax <- brms::loo(fit_joint_rmax)
 
 # loo_compare(loo_bs_rmax_rpc, loo_bs_rmax_rbs, loo_bs_rmax)
 

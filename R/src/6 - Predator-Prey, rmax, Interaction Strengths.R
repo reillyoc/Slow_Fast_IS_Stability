@@ -96,9 +96,9 @@ forage_IS_vertebrates <- forage_IS %>%
 
 unique(forage_IS_vertebrates$Data.set)
 
-lm_test<- lm(data = forage_IS_vertebrates, log_eco_scope ~ log_size_ratio)
+lm_test<- lm(data = forage_IS_vertebrates, log_rmax_met ~ log_size_ratio)
 summary(lm_test)
-plot(data = forage_IS_vertebrates, log_eco_scope ~ log_size_ratio)
+plot(data = forage_IS_vertebrates, log_rmax_met ~ log_size_ratio)
 abline(lm_test)
 
 rma_K_b <- lmodel2(log_b_yi ~ log_K, 
