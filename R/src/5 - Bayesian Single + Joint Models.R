@@ -29,6 +29,9 @@ source("../Slow_Fast_IS_Stability/R/src/0 - Functions.R")
 #Set BRMS cmdstanr
 options(brms.backend = "cmdstanr")
 
+#set seed for reproducibility
+set.seed(27)
+
 #load all data
 #Mammal Phylogeny from Beccari et al 2024
 df_tree <- readRDS("../Slow_Fast_IS_Stability/R/Data/PhilogenyReady.rds")
@@ -413,6 +416,9 @@ priors_kcv_null <- c(
   set_prior("exponential(1)", class = "phi")
 )
 
+range(df_mammal_cv_bs_fs_w$mean_k_cv)
+median(df_mammal_cv_bs_fs_w$mean_k_cv)
+
 brms_kcv_null <- brm(
   formula = mean_k_cv ~ 1 + (1 | gr(phylo, cov = A)),
   data = df_mammal_cv_bs_fs_w,
@@ -432,7 +438,7 @@ loo_kcv_null <- brms::loo(brms_kcv_null)
 loo_kcv_null
 
 brms_kcv_bs <- brm(
-  formula = mean_k_cv ~ sc_log_mean_body_mass + (1 | gr(phylo, cov = A)),
+  formula = mean_k_cv ~ log_mean_body_mass + (1 | gr(phylo, cov = A)),
   data = df_mammal_cv_bs_fs_w,
   data2 = list(A = cv_fs_corrma),
   prior = 
@@ -657,7 +663,6 @@ priors_updated <- c(
   # set_prior("student_t(3, 0, 10)",    class = "sigma", resp = "logitkcv")
 )
 
-
 fit_joint_rmax_pc_bs <- brm(
   brms::bf(log_rmax ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
     brms::bf(mean_k_cv ~ sc_log_mean_body_mass + PC1 + (1 | gr(phylo, cov = A))) +
@@ -777,6 +782,10 @@ bayes_R2(fit_joint_rmax, resp = "logrmax", probs = c(0.055, 0.945))
 bayes_R2(fit_joint_rmax, resp = "meankcv", probs = c(0.055, 0.945))
 summary(fit_joint_rmax, prob = 0.89)
 plot(fit_joint_rmax)
+
+
+summary(fit_joint_rmax_rpc_bs, prob = 0.89)
+
 
 #Estimates of body size unscaled
 draws <- as_draws_df(fit_joint_rmax) %>%
@@ -1014,7 +1023,7 @@ gg_epred_pc1
 gg_epred_bs_pc1 <- plot_grid(gg_epred_bs, gg_epred_pc1, nrow = 1, align = 'hv')
 gg_epred_bs_pc1
 
-ggsave("../R/Figures/Figure SX - Bayesian Rmax - BS + PC1 - Count Method.jpeg", plot = gg_epred_bs_pc1, width = 12, height = 4)
+# ggsave("../R/Figures/Figure SX - Bayesian Rmax - BS + PC1 - Count Method.jpeg", plot = gg_epred_bs_pc1, width = 12, height = 4)
 
 
 
@@ -1180,7 +1189,7 @@ gg_epred_met
 gg_epred_bs_pc1_met <- plot_grid(gg_epred_bs, gg_epred_pc1, gg_epred_met, nrow = 1, align = 'hv')
 gg_epred_bs_pc1_met
 
-ggsave("../R/Figures/Figure SX - Bayesian Rmax - Metab.jpeg", plot = gg_epred_bs_pc1_met, width = 12, height = 4)
+# ggsave("../R/Figures/Figure SX - Bayesian Rmax - Metab.jpeg", plot = gg_epred_bs_pc1_met, width = 12, height = 4)
 
 
 
