@@ -1,5 +1,5 @@
-# Interaction Strength and Stability Along the Slow-Fast Continuum
-This repository contains both Julia and R scripts to run theoretical models and empirical analyses of the manuscript "Interaction Strength and Stability Along the Slow-Fast Continuum".
+# Growth Potential, Interaction Strength, and Stability Along the Slow-Fast Continuum
+This repository contains both Julia and R scripts to run theoretical models and empirical analyses of the manuscript "Growth Potential, Interaction Strength, and Stability Along the Slow-Fast Continuum".
 
 Data for the empirical analyses were pulled from a variety of sources listed below:
 
